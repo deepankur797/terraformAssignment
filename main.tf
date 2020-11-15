@@ -1,3 +1,15 @@
+     terraform {
+       backend "remote" {
+         # The name of your Terraform Cloud organization.
+         organization = "dsb-enterprise"
+
+         # The name of the Terraform Cloud workspace to store Terraform state files in.
+         workspaces {
+           name = "TetrisAwsInfra"
+         }
+       }
+     }
+
 resource "aws_launch_configuration" "TetrisLC" {
   name_prefix = "tetris-"
 
